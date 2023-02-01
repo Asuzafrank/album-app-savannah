@@ -1,6 +1,7 @@
-from django.shortcuts import render,redirect
-
+from django.shortcuts import render,redirect, get_object_or_404
+from django.views.generic import DetailView
 from .models import Profile
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import UserRegisterForm,ProfileUpdateForm,UserUpdateform
 from django.contrib.auth.decorators import login_required
@@ -34,3 +35,8 @@ def profile(request):
 
     context={"u_form":u_form, "p_form":p_form}
     return render(request, 'users/profile.html',context)
+
+class UserDetailView(DetailView):
+    model = User
+    template_name = 'users/show_profile.html'
+    context_object_name = 'user'
