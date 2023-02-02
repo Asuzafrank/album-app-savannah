@@ -12,13 +12,12 @@ class UserRegisterForm(UserCreationForm):
 
 class UserUpdateform(forms.ModelForm):
     email = forms.EmailField()
-    location =forms.CharField()
-    birth_date = forms.DateField()
-    bio = forms.CharField()
+    first_name = forms.CharField(max_length=500)
+    last_name = forms.CharField(max_length=500)
 
     class Meta:
         model = User
-        fields = ['username','email', 'location', 'birth_date','bio',]
+        fields = ['username','email', 'first_name', 'last_name']
 
 class ProfileUpdateForm(forms.ModelForm):
     

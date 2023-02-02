@@ -5,13 +5,7 @@
       class="rounded-circle account-img"
       src="{{ user.profile.avatar.url }}"
     />
-    <div class="media-body">
-      <h2 class="account-heading">{{ user.username }}</h2>
-      <p class="text-secondary">{{ user.email }}</p>
-      <p class="text-secondary">{{ user.location }}</p>
-      <p class="text-secondary">{{ user.birth_date|date:"F d, Y" }}</p>
-      <p class="text-secondary">{{ user.bio }}</p>
-    </div>
+   
   </div>
   <!-- FORM HERE -->
    <form method="POST" enctype="multipart/form-data">

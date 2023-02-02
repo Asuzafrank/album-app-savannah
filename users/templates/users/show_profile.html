@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{ user.username }}</h1>
-    <p>location: {{ User.profile.location }}</p>
-    <p>bio: {{ user.profile.bio }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>date of birth: {{ user.profile.birth_date }}</p>
-</body>
-</html>
+{% extends "photos/base.html" %} {% block content %}
+
+<article class="media content-section">
+    <img
+      class="rounded-circle article-img"
+      src="{{ object.profile.avatar.url }}"
+    />
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#"></a>
+        
+      </div>
+      <h2>
+        <a class="article-title">username: {{ user.username }}</a>
+        <p class="article-content">Email: {{ user.email }}</p>
+      <p class="article-content">firstname: {{ user.first_name }}</p>
+      <p class="article-content">lastname: {{ user.last_name }}</p>
+      
+      </h2>
+      
+      
+    </div>
+  </article>
+ 
+ 
+{% endblock content %}
